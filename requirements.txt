@@ -1,3 +1,4 @@
 # pip3
-Flask
-Jsonify
+flask
+jsonify
+gunicorn
