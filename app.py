@@ -1,4 +1,3 @@
-from operator import truediv
 from flask import Flask, jsonify
 
 app = Flask(__name__)
