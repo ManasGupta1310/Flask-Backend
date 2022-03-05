@@ -213,7 +213,8 @@ def products():
   
   if request.method=="POST":
     data=request.get_json()
-    return data
+    print(data)
+    return jsonify(data)
 
 @app.route("/categories")
 @cross_origin()
