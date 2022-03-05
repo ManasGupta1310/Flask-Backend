@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 from flask_cors import cross_origin, CORS
 app = Flask(__name__)
 cors=CORS(app)
@@ -179,36 +179,41 @@ def orders():
 
     return jsonify(obj)
 
-@app.route("/products")
+@app.route("/products",methods=["POST", "GET"])
 @cross_origin()
 def products():
-  obj=[
-    {
-      "product":"Mc ALoo Tikki",
-      "category":"Burger",
-      "price":"50",
-      "inStock":True,
-    },
-    {
-      "product":"Mc Veggie",
-      "category":"Burger",
-      "price":"60",
-      "inStock":True,
-    },
-    {
-      "product":"Mc Flurry",
-      "category":"Ice Cream",
-      "price":"60",
-      "inStock":True,
-    },
-    {
-      "product":"Pepsi",
-      "category":"Drinks",
-      "price":"70",
-      "inStock":True,
-    }
-  ]
-  return jsonify(obj)
+  if request.method=="GET":
+    obj=[
+      {
+        "product":"Mc ALoo Tikki",
+        "category":"Burger",
+        "price":"50",
+        "inStock":True,
+      },
+      {
+        "product":"Mc Veggie",
+        "category":"Burger",
+        "price":"60",
+        "inStock":True,
+      },
+      {
+        "product":"Mc Flurry",
+        "category":"Ice Cream",
+        "price":"60",
+        "inStock":True,
+      },
+      {
+        "product":"Pepsi",
+        "category":"Drinks",
+        "price":"70",
+        "inStock":True,
+      }
+    ]
+    return jsonify(obj)
+  
+  if request.method=="POST":
+    data=request.form
+    return data
 
 @app.route("/categories")
 @cross_origin()
