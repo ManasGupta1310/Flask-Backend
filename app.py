@@ -212,7 +212,7 @@ def products():
     return jsonify(obj)
   
   if request.method=="POST":
-    data=request.json
+    data=request.get_json()
     return data
 
 @app.route("/categories")
