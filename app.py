@@ -1,3 +1,6 @@
+from os import access
+import string
+import random
 from flask import Flask, jsonify, request
 from flask_cors import cross_origin, CORS
 app = Flask(__name__)
@@ -240,6 +243,27 @@ def categories():
     }
   ]
   return jsonify(obj)
+
+@app.route("/userpass",methods=["POST"])
+@cross_origin()
+def user_auth_token():
+  
+  data=request.get_json()
+  print(data)
+  if data[0]['email']=="Manas" and data[0]["pass"]=="pass":
+    N = 7
+    res = ''.join(random.choices(string.ascii_uppercase +
+                             string.digits, k = N))
+    obj={
+      "access_token": str(res),
+      "access": True
+    }
+    return obj
+
+  return {
+    "access": False
+  }
+
 
 if __name__=="__main__":
     app.run(debug=True)
