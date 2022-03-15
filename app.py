@@ -249,7 +249,7 @@ def categories():
 def user_auth_token():
   
   data=request.get_json()
-  if data['email']=="Manas" and data["pass"]=="pass":
+  if data['email']=="Manas" and data["passord"]=="pass":
     N = 7
     res = ''.join(random.choices(string.ascii_uppercase +
                              string.digits, k = N))
