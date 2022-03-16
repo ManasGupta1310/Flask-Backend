@@ -382,7 +382,7 @@ def categoryListing():
                 "categoryID": 1,
                 "name": "Burger",
                 "enabled": True,
-                "image": null,
+                "image": "https://images.unsplash.com/photo-1551782450-a2132b4ba21d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80",
                 "products": [
                     {
                         "productID": 3,
@@ -402,7 +402,7 @@ def categoryListing():
                 "categoryID": 2,
                 "name": "Drinks",
                 "enabled": True,
-                "image": "linktosomething",
+                "image": "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80",
                 "products": [
                     {
                         "productID": 7,
