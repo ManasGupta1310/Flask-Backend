@@ -374,5 +374,50 @@ def cartList():
 
     return jsonify(obj)
 
+@app.route("/store/mcdonalds/category")
+@cross_origin()
+def categoryListing():
+    obj=[
+            {
+                "categoryID": 1,
+                "name": "Burger",
+                "enabled": True,
+                "image": null,
+                "products": [
+                    {
+                        "productID": 3,
+                        "name": "Mc Aloo Tikki",
+                        "price": 50,
+                        "instock": True
+                    },
+                    {
+                        "productID": 5,
+                        "name": "Mc Egg",
+                        "price": 40,
+                        "instock": True
+                    },
+                ]
+            },
+            {
+                "categoryID": 2,
+                "name": "Drinks",
+                "enabled": True,
+                "image": "linktosomething",
+                "products": [
+                    {
+                        "productID": 7,
+                        "name": "Pepsi",
+                        "price": 20,
+                        "instock": True
+                    },
+                    {
+                        "productID": 9,
+                        "name": "Coke",
+                        "price": 20,
+                        "instock": True
+                    }
+                ]
+            }
+        ]
 if __name__ == "__main__":
     app.run(debug=True)
