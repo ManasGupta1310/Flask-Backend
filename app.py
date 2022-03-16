@@ -1,4 +1,3 @@
-from os import access
 import string
 import random
 from flask import Flask, jsonify, request
