@@ -310,7 +310,7 @@ def user_auth_token():
 
 @app.route("/store/mcdonalds/cart")
 @cross_origin()
-def cartList():
+def cartListItem():
     obj = {
         "total": 260,
         "cartList": [
