@@ -263,7 +263,6 @@ def products():
         print(data)
         return jsonify(data)
 
-
 @app.route("/categories")
 @cross_origin()
 def categories():
