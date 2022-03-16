@@ -13,7 +13,7 @@ app.config['CORS_HEADERS']='Content-Type'
 def hello_world():
     return "<p>Hello, World!</p>"
 
-@app.route("/stores/mcdonalds")
+@app.route("/store/mcdonalds")
 @cross_origin()
 def stores_mcdonalds():
     obj={
@@ -92,7 +92,7 @@ def stores_mcdonalds():
 
     return jsonify(obj)
 
-@app.route("/stores/dominos")
+@app.route("/store/dominos")
 @cross_origin()
 def stores_dominos():
     obj={
