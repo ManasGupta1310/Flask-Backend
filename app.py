@@ -13,121 +13,161 @@ app.config['CORS_HEADERS']='Content-Type'
 def hello_world():
     return "<p>Hello, World!</p>"
 
-@app.route("/stores")
+@app.route("/stores/mcdonalds")
 @cross_origin()
-def stores():
-    obj=[
-  {
-    "storeName": "Mc Donalds",
-    "storeSlug": "mcdonalds",
-    "storeLogo": "https://img.icons8.com/external-tal-revivo-color-tal-revivo/96/000000/external-mcdonald-corporation-an-american-fast-food-company-food-color-tal-revivo.png",
-    "categories": [
-      {
-        "name": "Burger",
-        "products": [
-          {
-            "name": "Big Mac",
-            "price": "50",
-            "qty":0
-          },
-          {
-            "name": "Mc Aloo Tikki",
-            "price": "40",
-            "qty":0
-          }
-        ],
-        "Image": "https://images.unsplash.com/photo-1551782450-a2132b4ba21d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80"
+def stores_mcdonalds():
+    obj={
+      "store":{
+        "storename": "Mc Donalds",
+        "storeslug": "mcdonalds",
+        "storebanner":"https://images.unsplash.com/photo-1602400236316-f5e3b6d2314c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+        "storelogo": "https://img.icons8.com/external-tal-revivo-color-tal-revivo/96/000000/external-mcdonald-corporation-an-american-fast-food-company-food-color-tal-revivo.png",
       },
-      {
-        "name": "Meal",
-        "products": [
-          {
-            "name": "Medium Meal",
-            "price": "50",
-            "qty":0
-          },
-          {
-            "name": "Large Meal",
-            "price": "40",
-            "qty":0
-          }
-        ],
-        "Image": "https://images.unsplash.com/photo-1619881589670-43629f0e90f1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80"
+      "categories": [
+        { 
+          "categoryId":1,
+          "name": "Burger",
+          "products": [
+            { 
+              "productId":1,
+              "name": "Mc Aloo Tikki",
+              "price": "50",
+              "inStock": True,
+              "qty":0
+            },
+            { 
+              "productId":2,
+              "name": "Mc Egg",
+              "price": "40",
+              "inStock": True,
+              "qty":0
+            }
+          ],
+          "Image": "https://images.unsplash.com/photo-1551782450-a2132b4ba21d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80"
+        },
+        { 
+          "categoryId":2,
+          "name": "Meals",
+          "products": [
+            { 
+              "productId":1,
+              "name": "Chicken Large Meal",
+              "price": "50",
+              "inStock": True,
+              "qty":0
+            },
+            { 
+              "productId":2,
+              "name": "Veg Large Meal",
+              "price": "40",
+              "inStock": True,
+              "qty":0
+            }
+          ],
+          "Image": "https://images.unsplash.com/photo-1619881589670-43629f0e90f1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80"
+        },
+        {
+          "name": "Drinks",
+          "products": [
+            { 
+              "productId":2,
+              "name": "Pepsi",
+              "price": "50",
+              "inStock": True,
+              "qty":0
+            },
+            { 
+              "productId":2,
+              "name": "Coke",
+              "price": "40",
+              "inStock": True,
+              "qty":0
+            }
+          ],
+          "Image": "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80"
+        }
+      ]
+    }
+
+
+    return jsonify(obj)
+
+@app.route("/stores/dominos")
+@cross_origin()
+def stores_dominos():
+    obj={
+      "store":{
+        "storename": "Dominos",
+        "storeslug": "dominos",
+        "storebanner":"https://images.unsplash.com/photo-1602400236316-f5e3b6d2314c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+        "storelogo": "https://img.icons8.com/external-tal-revivo-shadow-tal-revivo/48/000000/external-dominos-an-american-multinational-pizza-restaurant-chain-food-shadow-tal-revivo.png",
       },
-      {
-        "name": "Drinks",
-        "products": [
-          {
-            "name": "Pepsi",
-            "price": "50",
-            "qty":0
-          },
-          {
-            "name": "Coke",
-            "price": "40",
-            "qty":0
-          }
-        ],
-        "Image": "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80"
-      }
-    ]
-  },
-  {
-    "storeName": "Dominos",
-    "storeSlug": "dominos",
-    "storeLogo": "https://img.icons8.com/external-tal-revivo-shadow-tal-revivo/48/000000/external-dominos-an-american-multinational-pizza-restaurant-chain-food-shadow-tal-revivo.png",
-    "categories": [
-      {
-        "name": "Veg Pizza",
-        "products": [
-          {
-            "name": "Tandoori Paneer",
-            "price": "50",
-            "qty":0
-          },
-          {
-            "name": "Veg Margherita",
-            "price": "40",
-            "qty":0
-          }
-        ],
-        "Image": "https://images.unsplash.com/photo-1607290817806-e93c813ff329?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
-      },
-      {
-        "name": "Non Veg Pizza",
-        "products": [
-          {
-            "name": "Chicken Barbeque",
-            "price": "50",
-            "qty":0
-          },
-          {
-            "name": "Chichken Dominator",
-            "price": "40",
-            "qty":0
-          }
-        ],
-        "Image": "https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1176&q=80"
-      },
-      {
-        "name": "Drinks",
-        "products": [
-          {
-            "name": "Pepsi",
-            "price": "50",
-            "qty":0
-          },
-          {
-            "name": "Coke",
-            "price": "40",
-            "qty":0
-          }
-        ],
-        "Image": "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80"
-      }
-    ]
-  }
-]
+      "categories": [
+        { 
+          "categoryId":1,
+          "name": "Veg Pizza",
+          "products": [
+            { 
+              "productId":1,
+              "name": "Tandoori Paneer",
+              "price": "50",
+              "inStock": True,
+              "qty":0
+            },
+            { 
+              "productId":2,
+              "name": "Veg Margherita",
+              "price": "40",
+              "inStock": True,
+              "qty":0
+            }
+          ],
+          "Image": "https://images.unsplash.com/photo-1607290817806-e93c813ff329?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+        },
+        { 
+          "categoryId":2,
+          "name": "Non Veg Pizza",
+          "products": [
+            { 
+              "productId":1,
+              "name": "Chicken Barbeque",
+              "price": "50",
+              "inStock": True,
+              "qty":0
+            },
+            { 
+              "productId":2,
+              "name": "Chichken Dominator",
+              "price": "40",
+              "inStock": True,
+              "qty":0
+            }
+          ],
+          "Image": "https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1176&q=80"
+        },
+        {
+          "name": "Drinks",
+          "products": [
+            { 
+              "productId":2,
+              "name": "Pepsi",
+              "price": "50",
+              "inStock": True,
+              "qty":0
+            },
+            { 
+              "productId":2,
+              "name": "Coke",
+              "price": "40",
+              "inStock": True,
+              "qty":0
+            }
+          ],
+          "Image": "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80"
+        }
+      ]
+    }
+
 
     return jsonify(obj)
 
